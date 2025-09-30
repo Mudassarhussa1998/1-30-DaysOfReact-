@@ -1,0 +1,64 @@
+.form-container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #555;
+}
+
+.form-input,
+.form-select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 4px rgba(37, 99, 235, 0.4);
+}
+
+.form-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-radio-group label {
+  font-size: 14px;
+  color: #444;
+}
+
+.form-output {
+  margin-top: 15px;
+  padding: 10px;
+  background: #eef2ff;
+  border-left: 4px solid #2563eb;
+  border-radius: 6px;
+}
+
+.form-output p {
+  margin: 4px 0;
+}
