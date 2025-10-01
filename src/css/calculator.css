@@ -1,0 +1,15 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    
+    
+}
+.main{
+    font-size: xx-large;
+    margin-inline: 900px;
+    border: 2px black;
+    
+}
+.sub{
+    display: flex;
+    gap: 5px;
+}
