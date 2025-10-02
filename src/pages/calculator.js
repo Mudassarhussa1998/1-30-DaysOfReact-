@@ -1,43 +1,61 @@
-import React from 'react'
-import '../css/calculator.css' 
+import React, { useState } from 'react'
+import '../css/calculator.css'
 
 export default function Calculator() {
+    const [input, setInput] = useState('');
+
+    const handleClick = (e) => {
+        if( e === 'clear'){
+            setInput("")
+        }
+        else if (e === "="){
+            try {
+                setInput(eval(input).toString()); 
+            } catch {
+                setInput("Error");
+            
+        }
+        }else {
+             setInput((prev) => prev + e);
+        }
+       
+    }
+
     return (
-        <div>
-            <div className='main' >
-                <div>
-                    {}
-                </div>
-                <div className='sub'>
-                    <div>*</div>
-                    <div>/</div>
-                    <div>+</div>
-                    <div>-</div>
+        <div className="main">
+            <div className="display">{input || "0"}</div>
 
-                </div>
-                <div className='sub'>
-                    <div>9</div>
-                    <div>8</div>
-                    <div>7</div>
-                    <div>6</div>
-                </div>
-                
-               <div className='sub'>
-                    <div>5</div>
-                    <div>4</div>
-                    <div>3</div>
-                    <div>2</div>
-                </div>
-
-                <div className='sub'>
-                    <div>1</div>
-                    <div>0</div>
-                    <div>00</div>
-                    <div>clear</div>
-                    
-                </div>
+            <div className="sub">
+                <button onClick={() => handleClick("*")}>*</button>
+                <button onClick={() => handleClick("/")}>/</button>
+                <button onClick={() => handleClick("+")}>+</button>
+                <button onClick={() => handleClick("-")}>-</button>
             </div>
 
+            <div className="sub">
+                <button onClick={() => handleClick("9")}>9</button>
+                <button onClick={() => handleClick("8")}>8</button>
+                <button onClick={() => handleClick("7")}>7</button>
+                <button onClick={() => handleClick("6")}>6</button>
+            </div>
+
+            <div className="sub">
+                <button onClick={() => handleClick("5")}>5</button>
+                <button onClick={() => handleClick("4")}>4</button>
+                <button onClick={() => handleClick("3")}>3</button>
+                <button onClick={() => handleClick("2")}>2</button>
+            </div>
+
+            <div className="sub">
+                <button onClick={() => handleClick("1")}>1</button>
+                <button onClick={() => handleClick("0")}>0</button>
+                <button onClick={() => handleClick("00")}>00</button>
+                <button onClick={() => handleClick("clear")}>Clear</button>
+            </div>
+
+            <div className="sub">
+                <button onClick={() => handleClick("=")}>=</button>
+            </div>
         </div>
-    )
+    );
 }
