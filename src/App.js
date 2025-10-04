@@ -3,6 +3,7 @@ import './App.css';
 import Calculator from './pages/calculator';
 import Counter from './pages/counter';
 import Dayone from './pages/dayone';
+import Todo from './pages/todo';
 
 function App() {
   const [color ,setcolor] = useState("");
@@ -16,6 +17,7 @@ function App() {
         {color}
         <input type='color' onChange={(e) => { setcolor(e.target.value)}} />
       </div>
+      <Todo />
       <Calculator />
       <Dayone />
       <Counter />
