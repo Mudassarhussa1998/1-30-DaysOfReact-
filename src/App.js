@@ -6,6 +6,7 @@ import Dayone from './pages/dayone';
 import Todo from './pages/todo';
 import Convertor from './pages/convertor';
 import Movies from './pages/movies';
+import Birthday from './pages/birthday';
 
 function App() {
   const [color ,setcolor] = useState("");
@@ -37,6 +38,7 @@ function App() {
         {color}
         <input type='color' onChange={(e) => { setcolor(e.target.value)}} />
       </div>
+      <Birthday />
       {collection.map((item, index) => (
         <Movies key={index} {...item} />
       ))}
