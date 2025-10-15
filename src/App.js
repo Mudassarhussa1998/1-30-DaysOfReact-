@@ -7,6 +7,8 @@ import Todo from './pages/todo';
 import Convertor from './pages/convertor';
 import Movies from './pages/movies';
 import Birthday from './pages/birthday';
+import Accordion from './pages/Accordion';
+import Search from './pages/Search';
 
 function App() {
   const [color ,setcolor] = useState("");
@@ -38,6 +40,8 @@ function App() {
         {color}
         <input type='color' onChange={(e) => { setcolor(e.target.value)}} />
       </div>
+      <Search />
+      <Accordion />
       <Birthday />
       {collection.map((item, index) => (
         <Movies key={index} {...item} />
