@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Routes, Route ,Link } from "react-router-dom";
 
@@ -34,6 +34,18 @@ function App() {
     }
   ];
 
+  const [mode, setmode] = useState(() =>{
+    return localStorage.getItem("mode") || "light";
+  });
+
+  useEffect(() => {
+    document.body.style.backgroundColor = mode === "light" ? "white" : "grey";
+    localStorage.setItem("mode", mode);
+  }, [mode]);
+
+    const handleMode = () => {
+      setmode((prev) => (prev === "light" ? "dark" : "light"));
+    }
   return (
     <div
       className="App"
@@ -42,6 +54,7 @@ function App() {
       <div>
         {color}
         <input type="color" onChange={(e) => setcolor(e.target.value)} />
+        <button onClick={() => handleMode("")}>{mode}</button>
       </div>
 
       <nav className="flex gap-4 p-3 bg-gray-200">
