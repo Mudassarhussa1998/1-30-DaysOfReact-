@@ -12,6 +12,7 @@ import Birthday from './pages/birthday';
 import Accordion from './pages/Accordion';
 import Search from './pages/Search';
 import Home from './pages/Home';
+import Jokes from './pages/Jokes';
 
 function App() {
   const [color, setcolor] = useState("");
@@ -67,6 +68,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/jokes" element={<Jokes />} />
         <Route path="/search" element={<Search />} />
         <Route path="/accordion" element={<Accordion />} />
         <Route path="/birthday" element={<Birthday />} />

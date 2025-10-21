@@ -13,6 +13,7 @@ export default function Home() {
     { name: " Accordion", path: "/accordion" },
     { name: " Search", path: "/search" },
     { name: " Day One", path: "/dayone" },
+    { name: " Jokes", path: "/jokes" },
   ];
 
   return (
